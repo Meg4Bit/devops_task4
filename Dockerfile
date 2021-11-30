@@ -20,7 +20,7 @@ RUN make -C cmakefiles
 RUN adduser --disabled-password techproguser
 
 # Настраиваем команду, которая должна быть запущена в контейнере во время его выполнения
-ENTRYPOINT python3 app.py --port=5000 --host=localhost
+ENTRYPOINT python3 app.py --port=5000 --host=0.0.0.0
 
 # Открываем порты
 EXPOSE 80

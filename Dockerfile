@@ -23,4 +23,4 @@ RUN adduser --disabled-password techproguser
 ENTRYPOINT python3 app.py --port=5000 --host=0.0.0.0
 
 # Открываем порты
-EXPOSE 80
+EXPOSE 5000

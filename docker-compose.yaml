@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  web:
+    build: ./server
+    ports:
+      - "80:8080"
+    depends_on:
+      - "db"
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: dostavim
+      MYSQL_USER: root
+      MYSQL_PASSWORD: admin
+      MYSQL_INIT_FILE: /var/tmp/CREATE.sql
+    volumes:
+      - "./mysql:/var/tmp/"
+    command: bash /var/tmp/start.sh
+    ports:
+      - "3306:3306"
